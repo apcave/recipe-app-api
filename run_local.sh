@@ -11,3 +11,11 @@ pip install -r requirements.dev.txt
 
 cd app
 flake8 .
+
+
+DB_HOST=db
+DB_NAME=devdb
+DB_USER=devuser
+DB_PASS=changeme
+
+python3 manage.py runserver 0.0.0.0:8000

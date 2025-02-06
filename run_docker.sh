@@ -23,3 +23,5 @@ sudo docker compose run --rm app sh
 
 # Starts the web service
 sudo docker compose up
+
+sudo docker compose run --rm app sh -c "python manage.py startapp core"
