@@ -35,3 +35,5 @@ sudo docker volume rm recipe-app-api_dev-db-data
 sudo docker compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
 
 sudo docker compose run --rm app sh -c "python manage.py createsuperuser"
+
+sudo docker compose run --rm app sh -c "python manage.py startapp user"
