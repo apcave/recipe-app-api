@@ -25,3 +25,13 @@ sudo docker compose run --rm app sh
 sudo docker compose up
 
 sudo docker compose run --rm app sh -c "python manage.py startapp core"
+sudo docker compose run --rm app sh -c "python manage.py makemigrations"
+
+
+# Remove migration.
+docker volume ls
+docker volume rm recipe-app-api_dev-db-data
+sudo docker volume rm recipe-app-api_dev-db-data
+sudo docker compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+
+sudo docker compose run --rm app sh -c "python manage.py createsuperuser"
