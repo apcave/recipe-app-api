@@ -32,7 +32,6 @@ urlpatterns = [
     ),
     path('api/user/', include('user.urls')),
     path('api/recipe/', include('recipe.urls')),
-    path('', views.home, name='home'),
 ]
 
 if settings.DEBUG:
