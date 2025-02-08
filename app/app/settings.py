@@ -23,6 +23,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+print('DEBUG:', DEBUG)
 
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS.extend(
@@ -31,6 +32,7 @@ ALLOWED_HOSTS.extend(
         os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(','),
     )
 )
+print('DJANGO_ALLOWED_HOSTS:', os.environ.get('DJANGO_ALLOWED_HOSTS'))
 print('ALLOWED_HOSTS:', ALLOWED_HOSTS)
 
 # Application definition
@@ -93,6 +95,7 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASS'),
     }
 }
+print('DATABASES:', DATABASES)
 
 
 # Password validation
