@@ -38,7 +38,11 @@ class RecipeViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
-class TagViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+# The order of the positional arguments is important.
+class TagViewSet(mixins.DestroyModelMixin,
+                 mixins.UpdateModelMixin,
+                 mixins.ListModelMixin,
+                 viewsets.GenericViewSet):
     """ Manage tags in the database."""
     serializer_class = serializers.TagSerializer
     queryset = Tag.objects.all()
