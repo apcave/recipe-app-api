@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 print('SECRET_KEY:', SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,10 +32,10 @@ ALLOWED_HOSTS = []
 ALLOWED_HOSTS.extend(
     filter(
         None,
-        os.environ.get('DJANGO_ALLOWED_HOSTS').split(','),
+        os.environ.get('ALLOWED_HOSTS').split(','),
     )
 )
-print('DJANGO_ALLOWED_HOSTS:', os.environ.get('DJANGO_ALLOWED_HOSTS'))
+print('DJANGO_ALLOWED_HOSTS:', os.environ.get('ALLOWED_HOSTS'))
 print('ALLOWED_HOSTS:', ALLOWED_HOSTS)
 
 # Application definition
