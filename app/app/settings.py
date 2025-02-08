@@ -31,7 +31,7 @@ ALLOWED_HOSTS.extend(
         os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(','),
     )
 )
-
+print('ALLOWED_HOSTS:', ALLOWED_HOSTS)
 
 # Application definition
 
