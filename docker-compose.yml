@@ -20,7 +20,8 @@ services:
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASS=changeme
-      - DEBUG=1
+      - DJANGO_SECRET_KEY=changeme
+      - DJANGO_DEBUG=1
       - DJANGO_ALLOWED_HOSTS=0.0.0.0,localhost
     depends_on:
       - db
