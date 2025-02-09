@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Get the container ID of the app container
-container_id=$(sudo docker-compose -f docker-compose-deploy.yml ps -q app)
+container_id=$(sudo docker-compose -f docker-compose-deploy.yml ps -q proxy)
 
 # Shell into the app container
 sudo docker exec -it $container_id sh

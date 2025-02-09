@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the container ID of the app container
-container_id=$(sudo docker-compose -f docker-compose-deploy.yml ps -q proxy)
+container_id=$(sudo docker-compose -f docker-compose-deploy.yml ps -q app)
 
 # Get the IP address of the app container
 container_ip=$(sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $container_id)
